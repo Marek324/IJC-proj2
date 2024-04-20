@@ -1,2 +1,8 @@
 *.o
 tail
+io_tests2024
+tail_tests2024
+wordcount_tests2024
+io-test.c
+*.sh
+*.mk
