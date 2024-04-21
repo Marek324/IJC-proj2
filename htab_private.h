@@ -3,17 +3,17 @@
 
 #include "htab.h"
 
-struct htab
-{
-    int size; // pocet zaznamov
-    int arr_size; // pocet prvkov htab_items
-    htab_item **htab_items;    
-};
-
 struct htab_item
 {
     htab_pair_t *pair;
-    htab_item *next;
+    struct htab_item *next;
+};
+
+struct htab
+{
+    int size;     // pocet zaznamov
+    int arr_size; // pocet prvkov htab_items
+    struct htab_item **htab_items;
 };
 
 #endif // HTAB_PRIVATE_H__
