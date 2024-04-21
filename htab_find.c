@@ -4,19 +4,19 @@
 htab_pair_t *htab_find(const htab_t *t, htab_key_t key)
 {
     size_t hash = htab_hash_function(key) % t->arr_size;
-    struct htab_item *a = t->htab_items[hash];
+    struct htab_item *itemPtr = t->htab_items[hash];
 
     htab_pair_t *ret = NULL;
 
-    while (a != NULL)
+    while (itemPtr != NULL)
     {
 
-        if (key == a->pair->key)
+        if (key == itemPtr->pair->key)
         {
-            ret = a->pair;
+            ret = itemPtr->pair;
         }
 
-        a = a->next;
+        itemPtr = itemPtr->next;
     }
 
     return ret;
