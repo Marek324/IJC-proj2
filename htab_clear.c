@@ -10,6 +10,7 @@ void htab_clear(htab_t *t)
     {
         free_htab_items(t->htab_items[i]);
     }
+    t->size = 0;
 }
 
 void free_htab_items(struct htab_item *item)
