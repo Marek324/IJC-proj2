@@ -11,8 +11,8 @@ struct htab_item
 
 struct htab
 {
-    int size;     // pocet zaznamov
-    int arr_size; // pocet prvkov htab_items
+    size_t size;     // pocet zaznamov
+    size_t arr_size; // pocet prvkov htab_items
     struct htab_item **htab_items;
 };
 
