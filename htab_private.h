@@ -5,14 +5,14 @@
 
 struct htab
 {
-    int size;
-    int arr_size;
+    int size; // pocet zaznamov
+    int arr_size; // pocet prvkov htab_items
     htab_item **htab_items;    
 };
 
 struct htab_item
 {
-    htab_pair_t pair;
+    htab_pair_t *pair;
     htab_item *next;
 };
 
