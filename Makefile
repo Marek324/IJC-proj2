@@ -10,4 +10,5 @@ clean:
 	rm -f *o tail
 
 test: 
+	make tail
 	make -f test.mk
