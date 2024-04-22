@@ -11,7 +11,7 @@ bool htab_erase(htab_t *t, htab_key_t key)
 
     while (itemPtr != NULL)
     {
-        if (key == itemPtr->pair->key)
+        if (strcmp(key, itemPtr->pair->key) == 0)
         {
             ret = 1;
             prev->next = itemPtr->next;

@@ -17,14 +17,14 @@ htab_pair_t *htab_lookup_add(htab_t *t, htab_key_t key)
             free(pairPtr);
             return NULL;
         }
-        
+
         size_t hash = htab_hash_function(key) % t->arr_size;
         struct htab_item *itemTmp = t->htab_items[hash];
         while (itemTmp->next != NULL)
         {
             itemTmp = itemTmp->next;
         }
-        
+
         itemTmp->next = (struct htab_item *)malloc(sizeof(struct htab_item));
         if (itemTmp->next == NULL)
         {

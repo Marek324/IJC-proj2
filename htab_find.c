@@ -11,7 +11,7 @@ htab_pair_t *htab_find(const htab_t *t, htab_key_t key)
     while (itemPtr != NULL)
     {
 
-        if (key == itemPtr->pair->key)
+        if (strcmp(key, itemPtr->pair->key) == 0)
         {
             ret = itemPtr->pair;
         }
