@@ -46,13 +46,6 @@ int main(int argc, char *argv[])
     char line[MAX_LINE_LENGTH + 2];
     while (fgets(line, sizeof(line), file) != NULL)
     {
-        // printf("write: %d\n", cbuf->writeIx);
-        // printf("read: %d\n", cbuf->readIx);
-        // for (int i = 0; i < cbuf->size; i++)
-        // {
-        //     printf("%d: %s", i, cbuf->lines[i]);
-        // }
-        
         if (strlen(line) > MAX_LINE_LENGTH)
         {
             if (lineLenErr)
@@ -90,7 +83,7 @@ CircularBufferT *cbuf_create(int size)
 
     cb->readIx = 0;
     cb->writeIx = 0;
-    cb->size = size+1;
+    cb->size = size + 1;
 
     cb->lines = (char **)malloc(sizeof(char *) * cb->size);
     if (cb->lines == NULL)

@@ -36,6 +36,9 @@ htab_pair_t *htab_lookup_add(htab_t *t, htab_key_t key)
         itemTmp = itemTmp->next;
         itemTmp->next = NULL;
         itemTmp->pair = pairPtr;
+        t->size++;
+    } else {
+        pairPtr->value++;
     }
     return pairPtr;
 }

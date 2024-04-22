@@ -18,6 +18,7 @@ bool htab_erase(htab_t *t, htab_key_t key)
             free(itemPtr->pair->key);
             free(itemPtr->pair);
             free(itemPtr);
+            t->size--;
             break;
         }
         prev = itemPtr;
