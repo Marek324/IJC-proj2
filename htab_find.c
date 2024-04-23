@@ -3,7 +3,7 @@
 
 htab_pair_t *htab_find(const htab_t *t, htab_key_t key)
 {
-    size_t hash = htab_hash_function(key) % t->arr_size;
+    size_t hash = htab_hash_function(key) % htab_bucket_count(t);
     struct htab_item *itemPtr = t->htab_items[hash];
 
     htab_pair_t *ret = NULL;

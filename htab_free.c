@@ -1,5 +1,6 @@
 #include "htab.h"
 #include "htab_private.h"
+#include <stdlib.h>
 
 void htab_free(htab_t *t)
 {

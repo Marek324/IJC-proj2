@@ -1,9 +1,10 @@
 #include "htab.h"
 #include "htab_private.h"
+#include <stdlib.h>
 
 bool htab_erase(htab_t *t, htab_key_t key)
 {
-    size_t hash = htab_hash_function(key) % t->arr_size;
+    size_t hash = htab_hash_function(key) % htab_bucket_count(t);
     struct htab_item *itemPtr = t->htab_items[hash];
 
     struct htab_item *prev = NULL;
@@ -15,7 +16,6 @@ bool htab_erase(htab_t *t, htab_key_t key)
         {
             ret = 1;
             prev->next = itemPtr->next;
-            free(itemPtr->pair->key);
             free(itemPtr->pair);
             free(itemPtr);
             t->size--;

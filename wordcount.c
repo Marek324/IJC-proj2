@@ -3,7 +3,7 @@
 
 #define HTAB_SIZE 10000
 #define STREAM stdin
-#define MAX_WORD_SIZE 255
+#define MAX_WORD_SIZE 256
 
 void print_pair(htab_pair_t *data);
 
@@ -12,22 +12,37 @@ int main()
     htab_t *htab = htab_init(HTAB_SIZE);
     FILE *input = STREAM;
 
-    char *word = malloc(sizeof(char) * MAX_WORD_SIZE);
+    char *word = malloc((sizeof(char) + 2) * MAX_WORD_SIZE);
     if (word == NULL)
     {
         fprintf(stderr, "Memory allocation failed.\n");
+        htab_free(htab);
+        free(word);
         return 1;
     }
 
+    int wordLenError = 1;
+    int len = 0;
+    while ((len = read_word(word, MAX_WORD_SIZE, input)) != EOF)
+    {
+        if (len == MAX_WORD_SIZE - 1 && wordLenError > 0)
+        {
+            fprintf(stderr, "Error: Word too long, truncated\n");
+            wordLenError--;
+        }
+        htab_pair_t *pairPtr = htab_lookup_add(htab, word);
+        if (pairPtr == NULL)
+        {
+            fprintf(stderr, "Memory allocation failed.\n");
+            htab_free(htab);
+            free(word);
+            return 1;
+        }
+    }
     free(word);
 
-    while (readword(word, MAX_WORD_SIZE, input) != EOF)
-    {
-        htab_lookup_add(htab, word);
-    }
-
     htab_for_each(htab, print_pair);
-    
+
 #ifdef STATISTICS
     htab_statistics(htab);
 #endif

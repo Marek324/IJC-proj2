@@ -10,14 +10,14 @@ void htab_statistics(const htab_t *t)
     int min = INT_MAX;
     int sum = 0;
 
-    int *lens = calloc(t->arr_size, sizeof(int));
+    int *lens = calloc(htab_bucket_count(t), sizeof(int));
     if (lens == NULL)
     {
         fprintf(stderr, "Memory allocation error\n");
         return;
     }
 
-    for (size_t i = 0; i < t->arr_size; i++)
+    for (size_t i = 0; i < htab_bucket_count(t); i++)
     {
         struct htab_item *itemPtr = t->htab_items[i];
         while (itemPtr != NULL)
@@ -38,7 +38,7 @@ void htab_statistics(const htab_t *t)
 
     free(lens);
 
-    float avg = (float)sum / (float)t->arr_size;
+    float avg = (float)sum / (float)htab_bucket_count(t);
 
     fprintf(stderr, "Minimum length: %d\n", min);
     fprintf(stderr, "Maximum length: %d\n", max);
