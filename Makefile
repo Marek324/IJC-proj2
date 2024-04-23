@@ -4,18 +4,18 @@ CFLAGS= -O2 -std=c11 -pedantic -Wall -Wextra -fPIC
 
 HTAB_OBJS = htab_hash_function.o htab_init.o htab_size.o htab_bucket_count.o htab_find.o htab_lookup_add.o htab_erase.o htab_for_each.o htab_clear.o htab_free.o htab_statistics.o
 
-.PHONY: all clean zip test
+.PHONY: all clean zip
 
 all: tail wordcount wordcount-dynamic
 
 tail: tail.c
-	$(CC) $(CFLAGSN) $^ -o $@
+	$(CC) $(CFLAGSN) -o $@ $^
 
 wordcount: wordcount.o libhtab.a io.o
-	$(CC) $(CFLAGSN) -static $^ -o $@
+	$(CC) $(CFLAGSN) -static -o $@ $^
 
 wordcount-dynamic: wordcount.o libhtab.so io.o
-	$(CC) $(CFLAGSN) $^ -o $@
+	$(CC) $(CFLAGSN) -o $@ $^
 
 io.o: io.c
 
@@ -23,7 +23,7 @@ libhtab.a: $(HTAB_OBJS)
 	ar rcs $@ $^
 
 libhtab.so: $(HTAB_OBJS)
-	$(CC) $(CFLAGS) -shared $^ -o $@
+	$(CC) $(CFLAGS) -shared -o $@ $^
 
 htab_hash_function.o: htab_hash_function.c
 
