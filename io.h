@@ -1,3 +1,9 @@
+/*
+Marek Hric
+FIT
+priklad 2
+23.4.2024
+*/
 #ifndef IO_H_
 #define IO_H_
 

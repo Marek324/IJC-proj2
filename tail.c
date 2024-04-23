@@ -1,3 +1,9 @@
+/*
+Marek Hric
+FIT
+priklad 1
+23.4.2024
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

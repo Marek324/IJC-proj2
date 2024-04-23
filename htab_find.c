@@ -1,3 +1,9 @@
+/*
+Marek Hric
+FIT
+priklad 2
+23.4.2024
+*/
 #include "htab.h"
 #include "htab_private.h"
 

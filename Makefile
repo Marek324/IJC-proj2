@@ -1,3 +1,6 @@
+# Marek Hric
+# FIT
+# 23.4.2024
 CC=gcc
 CFLAGSN= -O2 -std=c11 -pedantic -Wall -Wextra
 CFLAGS= -O2 -std=c11 -pedantic -Wall -Wextra -fPIC

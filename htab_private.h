@@ -1,3 +1,9 @@
+/*
+Marek Hric
+FIT
+priklad 2
+23.4.2024
+*/
 #ifndef HTAB_PRIVATE_H__
 #define HTAB_PRIVATE_H__
 
