@@ -1,7 +1,7 @@
 #include "io.h"
 #include "htab.h"
 
-#define HTAB_SIZE 10000
+#define HTAB_SIZE 10289
 #define STREAM stdin
 #define MAX_WORD_SIZE 256
 
