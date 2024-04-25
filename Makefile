@@ -7,7 +7,7 @@ CFLAGS= -O2 -std=c11 -pedantic -Wall -Wextra -fPIC
 
 HTAB_OBJS = htab_hash_function.o htab_init.o htab_size.o htab_bucket_count.o htab_find.o htab_lookup_add.o htab_erase.o htab_for_each.o htab_clear.o htab_free.o htab_statistics.o
 
-.PHONY: all clean zip
+.PHONY: all run clean zip
 
 all: tail wordcount wordcount-dynamic
 
@@ -46,8 +46,13 @@ htab_free.o: htab_free.c htab.h htab_private.h
 
 htab_statistics.o: htab_statistics.c htab.h htab_private.h
 
+run: all
+	seq 1000000 2000000 | shuf | ./wordcount 
+	seq 1000000 2000000 | shuf | LD_LIBRARY_PATH=. ./wordcount-dynamic 
+	./tail -n 10 Makefile	
+
 clean:
 	rm -f *.o *.a *.so *.zip wordcount wordcount-dynamic tail
 
 zip:
-	zip xhricm00.zip *.c *.h Makefile
+	zip xhricm00.zip *.c *cc *.h Makefile
