@@ -8,3 +8,7 @@ Implement shell *tail* command in C
 Implement own hash table library and use it to count word occurences in stdin input.
 
 **Final evaluation: 14.5/15**
+
+**Documentation**
+Documented with doxygen.
+Download and run `make doc` to see.
