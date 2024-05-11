@@ -1,9 +1,11 @@
-/*
-Marek Hric
-FIT
-priklad 2
-23.4.2024
+/**
+ * @file wordcount.c
+ * @brief Program that reads words from input and counts their occurences using hash table.
+ * Second task of the 2nd assignment in my "The C Programming Language" course.
+ * @author Marek Hric
+ * @bug Memory not properly freed. 
 */
+
 #include "io.h"
 #include "htab.h"
 
@@ -12,6 +14,12 @@ priklad 2
 #define MAX_WORD_SIZE 256
 
 void print_pair(htab_pair_t *data);
+
+/**
+ * @brief Main function of the program.
+ * 
+ * @return int exit code 
+ */
 
 int main()
 {
@@ -57,6 +65,12 @@ int main()
 
     return 0;
 }
+
+/**
+ * @brief Function that prints key and value of a pair.
+ * @fn void print_pair(htab_pair_t *data)
+ * @param data Pointer to the pair.
+ */
 
 void print_pair(htab_pair_t *data)
 {

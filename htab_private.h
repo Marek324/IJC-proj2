@@ -1,13 +1,18 @@
-/*
-Marek Hric
-FIT
-priklad 2
-23.4.2024
-*/
+/**
+ * @file htab_private.h
+ * @brief Private structures for the hash table.
+ * @author Marek Hric
+ */
+
 #ifndef HTAB_PRIVATE_H__
 #define HTAB_PRIVATE_H__
 
 #include "htab.h"
+
+/**
+ * @struct htab_item
+ * @brief structure representing the item in the hash table
+ */
 
 struct htab_item
 {
@@ -15,10 +20,15 @@ struct htab_item
     struct htab_item *next;
 };
 
+/**
+ * @struct htab
+ * @brief structure representing the hash table
+ */
+
 struct htab
 {
-    size_t size;     // pocet zaznamov
-    size_t arr_size; // pocet prvkov htab_items
+    size_t size;
+    size_t arr_size;
     struct htab_item **htab_items;
 };
 

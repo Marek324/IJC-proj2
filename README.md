@@ -1,3 +1,10 @@
-Body: 14.5/15
+**IJC: HW**
+The second project in my course, 'The C Programming Language', at the Brno University of Technology's Faculty of Information Technology
 
-TODO: Project refactorization
+**1st task**
+Implement shell *tail* command in C
+
+**2nd task** 
+Implement own hash table library and use it to count word occurences in stdin input.
+
+**Final evaluation: 14.5/15**

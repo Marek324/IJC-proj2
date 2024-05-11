@@ -1,11 +1,23 @@
-/*
-Marek Hric
-FIT
-priklad 2
-23.4.2024
-*/
+/**
+ * @file io.c
+ * @brief Functions for reading words from a file.
+ * Reads one word from a file and stores it in a string.
+ * @author Marek Hric
+ * @bug No known bugs.
+ */
+
 #include "io.h"
 #include <ctype.h>
+
+/**
+ * @brief Reads one word from a file and stores it in a string.
+ * @fn int read_word(char *s, int max, FILE *f)
+ *
+ * @param s pointer to the string where the word will be stored
+ * @param max maximum length of the string
+ * @param f pointer to the file
+ * @return int length of the string or EOF if there are no more words
+ */
 
 int read_word(char *s, int max, FILE *f)
 {

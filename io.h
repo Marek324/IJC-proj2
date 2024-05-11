@@ -1,9 +1,9 @@
-/*
-Marek Hric
-FIT
-priklad 2
-23.4.2024
-*/
+/**
+ * @file io.h
+ * @brief Header file for reading words from file.
+ * @author Marek Hric 
+ */
+
 #ifndef IO_H_
 #define IO_H_
 

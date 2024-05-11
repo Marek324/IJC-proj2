@@ -1,12 +1,22 @@
-/*
-Marek Hric
-FIT
-priklad 2
-23.4.2024
-*/
+/**
+ * @file htab_lookup_add.c
+ * @brief Function that looks up the key in the hash table and if it is not found, it adds it to the hash table.
+ * @author Marek Hric
+ * @bug No known bugs.
+ */
+
 #include "htab.h"
 #include "htab_private.h"
 #include <stdlib.h>
+
+/**
+ * @brief Function that looks up the key in the hash table and if it is not found, it adds it to the hash table.
+ * @fn htab_pair_t *htab_lookup_add(htab_t *table, htab_key_t key)
+ *
+ * @param table pointer to the hash table
+ * @param key key to be looked up
+ * @return htab_pair_t* pointer to the item with the key
+ */
 
 htab_pair_t *htab_lookup_add(htab_t *table, htab_key_t key)
 {

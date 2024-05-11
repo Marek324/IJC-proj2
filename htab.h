@@ -1,3 +1,9 @@
+/**
+ * @file htab.h
+ * @brief Interface for the hash table.
+ * Given to us by the teacher.
+ */
+
 // htab.h -- rozhraní knihovny htab (řešení IJC-DU2)
 // Licence: žádná (Public domain)
 

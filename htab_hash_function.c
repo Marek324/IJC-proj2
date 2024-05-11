@@ -1,11 +1,20 @@
-/*
-Marek Hric
-FIT
-priklad 2
-23.4.2024
-*/
+/**
+ * @file htab_hash_function.c
+ * @brief Function that generates a hash value from a string.
+ * @author Marek Hric
+ * @bug No known bugs.
+ */
+
 #include <stdint.h>
 #include <stddef.h>
+
+/**
+ * @brief Function that generates a hash value from a string.
+ * @fn size_t htab_hash_function(const char *str)
+ *
+ * @param str string to be hashed
+ * @return size_t hash value
+ */
 
 size_t htab_hash_function(const char *str)
 {
