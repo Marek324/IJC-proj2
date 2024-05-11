@@ -2,7 +2,7 @@
 The second project in my course, 'The C Programming Language', at the Brno University of Technology's Faculty of Information Technology
 
 **1st task**
-Implement shell *tail* command in C
+Implement shell `tail` command in C
 
 **2nd task** 
 Implement own hash table library and use it to count word occurences in stdin input.
