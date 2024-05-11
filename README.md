@@ -1,4 +1,4 @@
-**IJC: HW**
+**IJC: HW2**
 The second project in my course, 'The C Programming Language', at the Brno University of Technology's Faculty of Information Technology
 
 **1st task**
