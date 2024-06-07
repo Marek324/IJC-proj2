@@ -3,7 +3,7 @@
  * @brief Program that reads words from input and counts their occurences using hash table.
  * Second task of the 2nd assignment in my "The C Programming Language" course.
  * @author Marek Hric
- * @bug Memory not properly freed. 
+ * @bug No known bugs. 
 */
 
 #include "io.h"

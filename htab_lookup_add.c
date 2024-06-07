@@ -18,55 +18,43 @@
  * @return htab_pair_t* pointer to the item with the key
  */
 
-htab_pair_t *htab_lookup_add(htab_t *table, htab_key_t key)
-{
-    htab_pair_t *pairPtr = htab_find(table, key);
-    if (pairPtr != NULL)
-        pairPtr->value++;
-
-    else
-    {
-        pairPtr = malloc(sizeof(htab_pair_t));
-        if (pairPtr == NULL)
-            return NULL;
-
-        char *newKey = malloc(strlen(key) + 1);
-        if (newKey == NULL)
-        {
-            free(pairPtr);
-            return NULL;
-        }
-
-        pairPtr->key = strcpy(newKey, key);
-        pairPtr->value = 1;
-
+htab_pair_t *htab_lookup_add(htab_t *table, htab_key_t key) {
+    htab_pair_t *newPair = htab_find(table, key);
+    if (newPair != NULL) {
+        newPair->value++;
+    }
+    else {
         struct htab_item *newItem = malloc(sizeof(struct htab_item));
-        if (newItem == NULL)
-        {
-            free(pairPtr);
-            free(newKey);
+        if (newItem == NULL) {
             return NULL;
         }
-
-        newItem->pair = pairPtr;
-        newItem->next = NULL;
-
-        size_t hash = htab_hash_function(key) % table->arr_size;
-
-        struct htab_item *itemTmp = table->htab_items[hash];
-        if (itemTmp == NULL)
-        {
-            table->htab_items[hash] = newItem;
+        newPair = malloc(sizeof(htab_pair_t));
+        if (newPair == NULL) {
+            free(newItem);
+            return NULL;
         }
-        else
-        {
-            while (itemTmp->next != NULL)
-            {
-                itemTmp = itemTmp->next;
+        char *tmpKey = malloc(strlen(key) + 1);
+        if (tmpKey == NULL) {
+            free(newItem);
+            free(newPair);
+            return NULL;
+        }
+        newPair->key = strcpy(tmpKey, key);
+        newPair->value = 1;
+        newItem->pair = newPair;
+        newItem->next = NULL;
+        int index = htab_hash_function(key) % table->arr_size;
+        struct htab_item *add = table->htab_items[index];
+        if (add == NULL) {
+            table->htab_items[index] = newItem;
+        }
+        else {
+            while (add->next != NULL) {
+                add = add->next;
             }
-            itemTmp->next = newItem;
+            add->next = newItem;
         }
         table->size++;
     }
-    return pairPtr;
+    return newPair;
 }
