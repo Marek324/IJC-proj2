@@ -10,7 +10,7 @@ Prints the last _N_ (default: 10) lines from optional argument _FILE_ (default:S
 
 My `tail` uses circular buffer to store last _N_ lines. Overwrites oldest item in buffer when more than _N_ lines are present.
 
-### Instalation
+### Installation
 
 If you want to install only _tail_ part of this project download:
 
@@ -37,7 +37,7 @@ Prints how many times words appear in the text
 
 Functions are in separate files and are put together into one library during compilation. You can use statically or dynamically linked library.
 
-### Instalation
+### Installation
 
 For this program you'll need:
 
