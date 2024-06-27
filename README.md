@@ -1,6 +1,6 @@
 # Linux tail command / Hashtable wordcount both in C
 
-Project was assigned in my C programming langauge course at FIT BUT. First part of the assignment was to make a non-modular C replica of shell `tail` command. Second part was to implement own **hash table with separate chaining** and use it to count instances of words on stdin. Also added **Doxygen** documentation because I wanted to try it out.
+Project was assigned in my C programming language course at FIT BUT. First part of the assignment was to make a non-modular C replica of shell `tail` command. Second part was to implement own **hash table with separate chaining** and use it to count instances of words on stdin. Also added **Doxygen** documentation because I wanted to try it out.
 
 ## Linux shell command tail made in C
 
@@ -19,7 +19,7 @@ If you want to install only _tail_ part of this project download:
 
 Being in the same directory as `tail.c` and `Makefile` run:
 
-```bash
+```
 make tail
 ```
 
@@ -60,13 +60,13 @@ For this program you'll need:
 
 For statically linked library you'll want to run:
 
-```bash
+```
 make wordcount
 ```
 
 If you want to compile without library:
 
-```bash
+```
 make wordcount-dynamic
 ```
 
