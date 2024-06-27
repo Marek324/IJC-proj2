@@ -1,6 +1,6 @@
 # Linux tail command / Hashtable wordcount both in C
 
-Project was assigned in my C programming language course at FIT BUT. First part of the assignment was to make a non-modular C replica of shell `tail` command. Second part was to implement own **hash table with separate chaining** and use it to count instances of words on stdin. Also added **Doxygen** documentation because I wanted to try it out.
+Project was assigned in my C programming language course at FIT BUT. First part of the assignment was to make a non-modular C replica of shell `tail` command. Second part was to implement own **hash table with separate chaining** and use it to count instances of words on stdin. Final evaluation: 14.5/15. Also added **Doxygen** documentation because I wanted to try it out.
 
 ## Linux shell command tail made in C
 
